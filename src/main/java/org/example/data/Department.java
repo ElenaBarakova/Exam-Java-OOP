@@ -1,7 +1,6 @@
 package org.example.data;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Department {
     private int departmentId;

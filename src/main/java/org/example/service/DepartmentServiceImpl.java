@@ -25,6 +25,13 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    public void updateDepartment(Department department) {
+        departmentPersistance.updateDepartment(department);
+    }
+
+
+
+    @Override
     public void assignEmployeeToDepartment(int employeeId, int departmentId) {
         if (departmentPersistance.getDepartmentBy(departmentId) == null) {
             System.out.println("Department with ID " + departmentId + " does not exist!");
@@ -38,9 +45,6 @@ public class DepartmentServiceImpl implements DepartmentService {
             Employee employee = employeePersistance.getEmployeeBy(employeeId);
             departmentPersistance.addEmployeeToDepartment(employee, department);
         }
-
-
-
     }
 
     @Override

@@ -4,10 +4,10 @@ import org.example.data.Department;
 import org.example.data.Employee;
 import org.example.persistance.DepartmentPersistance;
 
-public class PromotioncalulatorImpl implements PromotionCalculator {
+public class PromotionCalculatorImpl implements PromotionCalculator {
     private final DepartmentPersistance departmentPersistance;
 
-    public PromotioncalulatorImpl(DepartmentPersistance departmentPersistance) {
+    public PromotionCalculatorImpl(DepartmentPersistance departmentPersistance) {
         this.departmentPersistance = departmentPersistance;
     }
 

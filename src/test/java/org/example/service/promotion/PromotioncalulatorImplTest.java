@@ -3,8 +3,6 @@ package org.example.service.promotion;
 import org.example.data.Department;
 import org.example.data.Employee;
 import org.example.persistance.DepartmentPersistance;
-import org.example.persistance.EmployeePersistance;
-import org.example.service.DepartmentServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,21 +11,20 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PromotioncalulatorImplTest {
 
     @InjectMocks
-    private PromotioncalulatorImpl promotioncalulator;
+    private PromotionCalculatorImpl promotioncalulator;
     @Mock
     private DepartmentPersistance departmentPersistance;
 
 
     @Before
     public void setUp() {
-        promotioncalulator = new PromotioncalulatorImpl(departmentPersistance);
+        promotioncalulator = new PromotionCalculatorImpl(departmentPersistance);
     }
 
     @Test

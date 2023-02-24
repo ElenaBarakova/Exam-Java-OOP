@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.data.Employee;
-import org.example.persistance.DepartmentPersistance;
 import org.example.persistance.EmployeePersistance;
 import org.example.presentation.EmployeePresenter;
 import org.example.service.promotion.PromotionCalculator;

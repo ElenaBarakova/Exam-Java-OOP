@@ -1,11 +1,9 @@
 package org.example.persistance;
 
-import org.example.data.Department;
 import org.example.data.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class InMemoryEmployeePersistance implements EmployeePersistance {
     private final List<Employee> employees;
@@ -27,8 +25,7 @@ public class InMemoryEmployeePersistance implements EmployeePersistance {
         if (!employeeAlreadyExists) {
             employees.add(employee);
         } else {
-            throw new IllegalArgumentException("Employee with " + employee.getEmployeeId() + " already exists!");
-            // System.out.println("Employee with " + employee.getEmployeeId() + " already exists!");
+             System.out.println("Employee with " + employee.getEmployeeId() + " already exists!");
         }
     }
 

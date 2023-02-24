@@ -28,6 +28,25 @@ public class InMemoryDepartmentPersistance implements DepartmentPersistance {
         }
 
     }
+    @Override
+    public Department removeDepartmentBy(int departmentId) {
+        Department found = getDepartmentBy(departmentId);
+        departments.remove(found);
+        return found;
+    }
+
+    @Override
+    public void updateDepartment(Department department){
+        boolean departmentExists = departments.stream()
+                .anyMatch(d -> d.getDepartmentId() == department.getDepartmentId());
+        if (departmentExists){
+            removeDepartmentBy(department.getDepartmentId());
+            addDepartment(department);
+        }else{
+            System.out.println("No department with ID "+department.getDepartmentId()+" exists!”");
+        }
+
+    }
 
     @Override
     public void addEmployeeToDepartment(Employee employee, Department department) {
@@ -75,6 +94,13 @@ public class InMemoryDepartmentPersistance implements DepartmentPersistance {
         }
 
     }
+
+    @Override
+    public List<Department> getDepartments(){
+        return departments;
+    }
+
+
 
 
 
